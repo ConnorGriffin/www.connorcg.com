@@ -4,15 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I am a Senior Systems Administrator in Phoenix, AZ. My primary skills are Windows systems administration, network security, and cloud computing.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My hobbies include playing ice hockey, drumming, and automating everything in sight.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I aim to share as much of my knowledge as possible in hopes that I can help the next guy save some time.
 
-
-[jekyll-organization]: https://github.com/jekyll
+<a href="https://www.linkedin.com/in/connor-griffin-b8b5b0103/">LinkedIn</a>
