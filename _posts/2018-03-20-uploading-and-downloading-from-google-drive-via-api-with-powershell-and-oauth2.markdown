@@ -10,11 +10,9 @@ tags:
 comments: true
 ---
 <!--more-->
-My organization is currently in the process of migrating from Office 365 to G Suite, as well as migrating to Team Drives from a traditional SMB file server. This has resulted in a need for an easy method to interact with Google Drive using PowerShell, as I have a number of scripts that store and read data on SMB file shares. Thanks to Montel Edwards for getting me started
-with <a href="https://monteledwards.com/2017/03/05/powershell-oauth-downloadinguploading-to-google-drive-via-drive-api/">this</a> post.
+My organization is currently in the process of migrating from Office 365 to G Suite, as well as migrating to Team Drives from a traditional SMB file server. This has resulted in a need for an easy method to interact with Google Drive using PowerShell, as I have a number of scripts that store and read data on SMB file shares. Thanks to Montel Edwards for getting me startedwith <a href="https://monteledwards.com/2017/03/05/powershell-oauth-downloadinguploading-to-google-drive-via-drive-api/">this</a> post.  
 
-I am working on a GDrive module that uses concepts from this post to mirror many built-in
-PowerShell functions, such as: Get-Item, Get-ChildItem, New-Item, etc. The GDrive module would include functions such as: Get-GDriveItem, Get-GDriveChildItem, New-GDriveItem, etc.
+I am working on a GDrive module that uses concepts from this post to mirror many built-in PowerShell functions, such as: Get-Item, Get-ChildItem, New-Item, etc. The GDrive module would include functions such as: Get-GDriveItem, Get-GDriveChildItem, New-GDriveItem, etc.
 
 ## Create Project and OAuth 2 Tokens
 
@@ -26,11 +24,69 @@ Write stuff
 
 ## Download from Drive
 
-Write stuff
+Downloading from Drive can be done two different ways:
+1. Exporting Google Apps formats to standard formats.
+2. Downloading binary data as-is.
 
-### Download/Export Based on MIME Type
+We can pull the file metadata and then look at the MIME type to determine which method to use.
 
-Write stuff
+First we have to provide the fileId, the destinationPath, and set the authentication headers.
+
+{% highlight powershell %}
+# Change this to the id of the file you want to download. Right click a file and click 'Get shareable link' to find the ID
+$fileId = 'fileId'
+
+# Change this to where you want the resulting file to be placed. Just the path; do not include the file name
+$destinationPath = 'Path\To\Store\File'
+
+# Set the authentication headers
+$headers = @{
+    'Authorization' = "Bearer $accessToken"
+    'Content-type' = 'application/json'
+}
+{% endhighlight %}
+
+We can now use this data to get the file metadata, determine which format to download the file in, and then download or export the file.
+
+This will download the file to `$destinationPath` with the name of the file in Google Drive.
+
+{% highlight powershell %}
+# Get the file metadata
+$fileMetadata = Invoke-RestMethod -Uri "https://www.googleapis.com/drive/v3/files/$fileId" -Headers $headers
+
+# If this is a Google Apps filetype, export it
+if ($fileMetadata.mimetype -like 'application/vnd.google-apps.*') {
+    # Determine which mimeType to use when exporting the files
+    switch ($fileMetadata.mimetype) {
+        'application/vnd.google-apps.document' {
+            $exportMime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            $exportExt = '.docx'
+        }
+        'application/vnd.google-apps.presentation' {
+            $exportMime = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+            $exportExt = '.pptx'
+        }
+        'application/vnd.google-apps.spreadsheet' {
+            $exportMime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            $exportExt = '.xlsx'
+        }
+        'application/vnd.google-apps.drawings' {
+            $exportMime = 'image/png'
+            $exportExt = '.png'
+        }
+        'application/vnd.google-apps.script' {
+            $exportMime = 'application/vnd.google-apps.script+json'
+            $exportExt = '.json'
+        }
+    }
+    $exportFileName = "$destinationPath\$($fileMetadata.name)$exportExt"
+    Invoke-RestMethod -Uri "https://www.googleapis.com/drive/v3/files/$fileId/export?mimeType=$exportMime" -Method Get -OutFile $exportFileName -Headers $headers
+} else {
+    # If this is a binary file, just download it as-is.
+    $exportFileName = "$destinationPath\$($fileMetadata.name)"
+    Invoke-RestMethod -Uri "https://www.googleapis.com/drive/v3/files/${fileId}?alt=media" -Method Get -OutFile $exportFileName -Headers $headers
+}
+{% endhighlight %}
 
 ## Upload to Drive
 
