@@ -18,11 +18,10 @@ email: connor@connorcg.com
 description: >- # this means to ignore newlines until "baseurl:"
   Systems Administrator with a primary focus on PowerShell scripting, trying to
   automate everything.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.connorcg.com" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: connorcg
 github_username:  ConnorGriffin
-linkedin_profile:  connor-griffin-b8b5b0103
 
 # Build settings
 markdown: kramdown
