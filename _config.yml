@@ -24,6 +24,12 @@ excerpt_separator: "<!--more-->"   # Workaround for http://blog.slaks.net/2013-0
 google_analytics: UA-19161168-1
 #twitter_username: connorcg
 github_username:  ConnorGriffin
+linkedin_username: connor-griffin-b8b5b0103
+
+show_excerpts: true
+
+disqus:
+  shortname: connorcg
 
 # Build settings
 markdown: kramdown
