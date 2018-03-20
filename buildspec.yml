@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - gem install jekyll jekyll-feed jekyll-seo-tag
+      - gem install jekyll jekyll-feed jekyll-seo-tag minima
   build:
     commands:
       - echo "******** Building Jekyll site ********"
