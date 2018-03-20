@@ -9,7 +9,7 @@ tags:
 - API
 comments: true
 ---
-
+<!--more-->
 My organization is currently in the process of migrating from Office 365 to G Suite, as well as migrating to Team Drives from a traditional SMB file server. This has resulted in a need for an easy method to interact with Google Drive using PowerShell, as I have a number of scripts that store and read data on SMB file shares. Thanks to Montel Edwards for getting me started
 with <a href="https://monteledwards.com/2017/03/05/powershell-oauth-downloadinguploading-to-google-drive-via-drive-api/">this</a> post.
 
