@@ -13,5 +13,6 @@ phases:
     commands:
       - echo "******** Building Jekyll site ********"
       - jekyll build
-      - echo "******** Uploading to S3 ********"
-      - aws s3 sync _site/ s3://www.connorcg.com
+  post_build:
+    - echo "******** Uploading _site to S3://www.connorcg.com ********"
+    - aws s3 sync _site/ s3://www.connorcg.com
