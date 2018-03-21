@@ -2,6 +2,7 @@
 layout: post
 title: "Uploading and Downloading from Google Drive via API with PowerShell and OAuth 2"
 date: 2018-03-20 11:39:00 -700
+modified: 2018-03-21 13:58:00 -700
 categories: PowerShell
 tags:
 - PowerShell
@@ -193,4 +194,4 @@ $response = Invoke-RestMethod -Uri 'https://www.googleapis.com/upload/drive/v3/f
 
 ### Upload
 
-{% gist dc804357bb10ff7522d0e21ddfdf9398 %} 
+{% gist dc804357bb10ff7522d0e21ddfdf9398 %}
