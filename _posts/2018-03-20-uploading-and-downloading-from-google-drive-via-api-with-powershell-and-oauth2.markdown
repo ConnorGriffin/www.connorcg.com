@@ -186,3 +186,11 @@ When performing the upload, we change the -Uri parameter to include the paramete
 {% highlight powershell %}
 $response = Invoke-RestMethod -Uri 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&supportsTeamDrives=true' -Method Post -Headers $uploadHeaders -Body $uploadBody
 {% endhighlight %}
+
+## Completed Scripts
+### Download
+
+
+### Upload
+
+{% gist dc804357bb10ff7522d0e21ddfdf9398 %} 
