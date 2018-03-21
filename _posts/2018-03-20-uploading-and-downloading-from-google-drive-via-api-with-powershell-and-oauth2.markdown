@@ -21,7 +21,7 @@ Write stuff
 
 ## Get Refresh Token
 
-{% highlight %}
+{% highlight powershell %}
 # Set the Google Auth parameters. Fill in your RefreshToken, ClientID, and ClientSecret
 $params = @{
     Uri = 'https://accounts.google.com/o/oauth2/token'
