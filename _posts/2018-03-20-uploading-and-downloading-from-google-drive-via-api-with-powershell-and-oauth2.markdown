@@ -2,7 +2,7 @@
 layout: post
 title: "Uploading and Downloading from Google Drive via API with PowerShell and OAuth 2"
 date: 2018-03-20 11:39:00 -700
-modified: 2018-03-21 13:58:00 -700
+modified: 2018-03-21 14:11:00 -700
 categories: PowerShell
 tags:
 - PowerShell
@@ -21,7 +21,21 @@ Write stuff
 
 ## Get Refresh Token
 
-Write stuff
+{% highlight %}
+# Set the Google Auth parameters. Fill in your RefreshToken, ClientID, and ClientSecret
+$params = @{
+    Uri = 'https://accounts.google.com/o/oauth2/token'
+    Body = @(
+        "refresh_token=$RefreshToken", # Replace $RefreshToken with your refresh token
+        "client_id=$ClientID",         # Replace $ClientID with your client ID
+        "client_secret=$ClientSecret", # Replace $ClientSecret with your client secret
+        "grant_type=refresh_token"
+    ) -join '&'
+    Method = 'Post'
+    ContentType = 'application/x-www-form-urlencoded'
+}
+$accessToken = (Invoke-RestMethod @params).access_token
+{% endhighlight %}
 
 ## Download from Drive
 
