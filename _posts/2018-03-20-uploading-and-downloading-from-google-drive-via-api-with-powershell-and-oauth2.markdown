@@ -2,7 +2,7 @@
 layout: post
 title: "Uploading and Downloading from Google Drive via API with PowerShell and OAuth 2"
 date: 2018-03-20 11:39:00 -700
-modified: 2018-03-21 14:11:00 -700
+modified: 2018-08-28 20:00 -700
 categories: PowerShell
 tags:
 - PowerShell
@@ -11,15 +11,15 @@ tags:
 comments: true
 ---
 <!--more-->
-My organization is currently in the process of migrating from Office 365 to G Suite, as well as migrating to Team Drives from a traditional SMB file server. This has resulted in a need for an easy method to interact with Google Drive using PowerShell, as I have a number of scripts that store and read data on SMB file shares. Thanks to Montel Edwards for getting me started with <a href="https://monteledwards.com/2017/03/05/powershell-oauth-downloadinguploading-to-google-drive-via-drive-api/">this</a> post.  
+My organization is currently in the process of migrating from Office 365 to G Suite, as well as migrating to Team Drives from a traditional SMB file server. This has resulted in a need for an easy method to interact with Google Drive using PowerShell, as I have a number of scripts that store and read data on SMB file shares. Thanks to Montel Edwards for getting me started with <a href="https://monteledwards.com/2017/03/05/powershell-oauth-downloadinguploading-to-google-drive-via-drive-api/" target="_blank">his post</a>.
 
-I am working on a GDrive module that uses concepts from this post to mirror many built-in PowerShell functions, such as: Get-Item, Get-ChildItem, New-Item, etc. The GDrive module would include functions such as: Get-GDriveItem, Get-GDriveChildItem, New-GDriveItem, etc.
+I also highly recommend checking out the <a href="https://github.com/scrthq/PSGSuite" target="_blank">PSGsuite</a> module from Nate Ferrell. It may already accomplish what you're looking for. And if not, contribute to it!
 
 ## Create Project and OAuth 2 Tokens
 
-Write stuff
+The article from Montel Edwards linked above has instructions for this piece. The README for <a href="https://github.com/MVKozlov/GMGoogleDrive" target="_blank">GMGoogleDrive</a> also has some great instructions. You'll need to have a project with access to the Google Drive API, and a refresh token, client ID, and client secret.
 
-## Get Refresh Token
+## Get Access Token
 
 {% highlight powershell %}
 # Set the Google Auth parameters. Fill in your RefreshToken, ClientID, and ClientSecret
@@ -167,7 +167,7 @@ $response = Invoke-RestMethod -Uri 'https://www.googleapis.com/upload/drive/v3/f
 
 To upload to a specific folder rather than to the root of your Google Drive, you need to specify a parent ID in the file metadata.
 The API documentation says that parents should be an array, but it seems to error out if you provide more than one value. I don't
-fully understand the use case for multiple parents, but for simple uploads having 1 works just fine.  
+fully understand the use case for multiple parents, but for simple uploads having 1 works just fine.
 
 The folder ID can be seen in your address bar when browsing Google Drive. For example: `https://drive.google.com/drive/folders/1hUL97Xd6tEiR-44fV7PYQ9BZaulA3ASg`
 
@@ -205,6 +205,7 @@ $response = Invoke-RestMethod -Uri 'https://www.googleapis.com/upload/drive/v3/f
 ## Completed Scripts
 ### Download
 
+Working on putting this together!
 
 ### Upload
 
