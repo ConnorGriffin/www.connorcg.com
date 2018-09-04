@@ -2,7 +2,7 @@
 layout: post
 title: "Uploading and Downloading from Google Drive via API with PowerShell and OAuth 2"
 date: 2018-03-20 11:39:00 -700
-modified: 2018-08-28 20:00 -700
+modified: 2018-09--3 22:43 -700
 categories: PowerShell
 tags:
 - PowerShell
@@ -10,8 +10,8 @@ tags:
 - API
 comments: true
 ---
-<!--more-->
-My organization is currently in the process of migrating from Office 365 to G Suite, as well as migrating to Team Drives from a traditional SMB file server. This has resulted in a need for an easy method to interact with Google Drive using PowerShell, as I have a number of scripts that store and read data on SMB file shares. Thanks to Montel Edwards for getting me started with <a href="https://monteledwards.com/2017/03/05/powershell-oauth-downloadinguploading-to-google-drive-via-drive-api/" target="_blank">his post</a>.
+
+My organization is currently in the process of migrating from Office 365 to G Suite, as well as migrating to Team Drives from a traditional SMB file server. This has resulted in a need for an easy method to interact with Google Drive using PowerShell, as I have a number of scripts that store and read data on SMB file shares.<!--more--> Thanks to Montel Edwards for getting me started with <a href="https://monteledwards.com/2017/03/05/powershell-oauth-downloadinguploading-to-google-drive-via-drive-api/" target="_blank">his post</a>.
 
 I also highly recommend checking out the <a href="https://github.com/scrthq/PSGSuite" target="_blank">PSGsuite</a> module from Nate Ferrell. It may already accomplish what you're looking for. And if not, contribute to it!
 
@@ -48,17 +48,17 @@ We can pull the file metadata and then look at the MIME type to determine which 
 First we have to provide the fileId, the destinationPath, and set the authentication headers.
 
 {% highlight powershell %}
-# Change this to the id of the file you want to download. Right click a file and click 'Get shareable link' to find the ID
-$fileId = 'fileId'
-
-# Change this to where you want the resulting file to be placed. Just the path; do not include the file name
-$destinationPath = 'Path\To\Store\File'
-
 # Set the authentication headers
 $headers = @{
     'Authorization' = "Bearer $accessToken"
     'Content-type' = 'application/json'
 }
+
+# Change this to the id of the file you want to download. Right click a file and click 'Get shareable link' to find the ID
+$fileId = 'fileId'
+
+# Change this to where you want the resulting file to be placed. Just the path; do not include the file name
+$destinationPath = 'Path\To\Store\File'
 {% endhighlight %}
 
 We can now use this data to get the file metadata, determine which format to download the file in, and then download or export the file.
@@ -203,9 +203,12 @@ $response = Invoke-RestMethod -Uri 'https://www.googleapis.com/upload/drive/v3/f
 {% endhighlight %}
 
 ## Completed Scripts
+
+These could very easily be converted to functions, but the intent was to provide a framework on which to build, not a complete solution.
+
 ### Download
 
-Working on putting this together!
+{% gist 43597a3f07b990a4a48a8ef852fb5d8c %}
 
 ### Upload
 
