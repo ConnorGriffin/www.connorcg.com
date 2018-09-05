@@ -36,6 +36,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-gist
+  - jekyll-redirect-from
 
 permalink: /:title:output_ext
 
