@@ -2,7 +2,7 @@
 # the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY or
 # ~/.aws/credentials.
 profile: default
-s3_bucket: www.connorcg.com
+s3_bucket: connorcg.com
 
 # set session_token if using temporary credentials with a session token (eg: when assuming a role)
 # session_token: YOUR_AWS_S3_SESSION_TOKEN
