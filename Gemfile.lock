@@ -3,12 +3,6 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    blade-theme (1.2.1)
-      jekyll (~> 3.3)
-      jekyll-feed (~> 0.6)
-      jekyll-paginate (~> 1.1)
-      jekyll-seo-tag
-      jekyll-sitemap
     colorator (1.1.0)
     concurrent-ruby (1.0.5)
     em-websocket (0.5.1)
@@ -41,12 +35,11 @@ GEM
       jekyll (~> 3.3)
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
-    jekyll-paginate (1.1.0)
+    jekyll-redirect-from (0.14.0)
+      jekyll (~> 3.3)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.5.0)
-      jekyll (~> 3.3)
-    jekyll-sitemap (1.2.0)
       jekyll (~> 3.3)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
@@ -92,10 +85,10 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  blade-theme (~> 1.2.1)
   jekyll (~> 3.8)
   jekyll-feed (~> 0.6)
   jekyll-gist
+  jekyll-redirect-from
   minima (~> 2.0)
   tzinfo-data
 
