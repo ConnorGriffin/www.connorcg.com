@@ -2,7 +2,7 @@
 layout: post
 title: YNAB Weekly Spending Reports with Google Apps Script
 date: 2018-09-04 00:00:00 -700
-modified: 2018-09-04 00:00:00 -700
+modified: 2018-09-08 00:00:00 -700
 categories: YNAB
 tags:
 - Google Apps Script
@@ -29,12 +29,17 @@ Google Apps Script lets us run Javascript on Google's servers for free, which is
 ### Add The Report Code
 Replace the contents of the default **Code.gs** with the following script. One of the things the report does is go into your Gmail inbox and mark the message as unread. This is necessary if you're sending to and from the same address, since Google will automatically mark the received message as read. If you're sending to a non-Gmail address you should remove lines 71-80.
 
+Due to requests from various users on Reddit, I have provided a few alternative scripts that change the way the reports are specified and reported on. 
+* [Standard Report (the version below)](https://gist.github.com/ConnorGriffin/bbae5d2a99a58aca847f413dd2540b73) - Child categories are specified, the report shows totals for each child category.
+* [Category Group Detail](https://gist.github.com/ConnorGriffin/d08a73eb3f679c7868122708e3a1f837) - Master categories are specified, the report shows totals for each child category.
+* [Category Group Summary](https://gist.github.com/ConnorGriffin/7f85493d17e3eefd83a1e5bd88ce91d5) - Master categories are specified, the report shows totals for each master category.
+
 Fill in these fields with your own details:  
 
 `accessToken`: Your YNAB Personal Access Token  
 `budgetName`: Name of the budget to use  
 `categories`: Your desired category names to monitor, in Javascript array syntax (example provided)  
-`recipient`: Email recipients, comma separated  
+`recipient`: Email recipients, comma separated 
 
 {% gist bbae5d2a99a58aca847f413dd2540b73 %}
 
