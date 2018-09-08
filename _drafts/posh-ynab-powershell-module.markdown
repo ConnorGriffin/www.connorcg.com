@@ -6,6 +6,7 @@ modified: 2018-09-03 00:00:00 -700
 categories: PowerShell
 tags:
 - PowerShell
+- Automation
 - YNAB
 - API
 comments: true

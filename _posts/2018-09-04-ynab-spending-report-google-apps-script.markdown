@@ -6,6 +6,7 @@ modified: 2018-09-08 00:00:00 -700
 categories: YNAB
 tags:
 - Google Apps Script
+- Automation
 - YNAB
 - API
 - Finance
