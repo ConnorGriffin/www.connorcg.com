@@ -8,11 +8,7 @@ tags:
 - Google Apps Script
 - Automation
 - YNAB
-- Budget
 - API
-- Finance
-- Zillow
-- Zestimate
 comments: true
 ---
 
