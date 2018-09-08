@@ -14,7 +14,7 @@ comments: true
 
 [You Need A Budget](https://ynab.com/referral/?ref=YK_lCy_BFqyQo6f0&utm_source=customer_referral) is an online subscription-based budgeting application that I've been using since mid-2015. It's incredibly helpful in maximizing savings and reducing the guilt in making large purchases, among countless other things. Reddit user *doctors_like_cash* was looking for a way to email a weekly summary of activity by category, so I whipped up an example using [Google Apps Script](https://developers.google.com/apps-script/), which allows you to excute code on a schedule without having to host a server or run anything locally.
 
-![Example YNAB spending report](/assets/img/ynab-spending-report-2018-09-03_23-31.png)
+![Example YNAB spending report](/assets/img/ynab-spending-report-2018-09-03_23-31.png){: .center-image }
 <!--more-->
 
 ## Building the Report

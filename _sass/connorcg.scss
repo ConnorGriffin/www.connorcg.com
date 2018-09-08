@@ -3,3 +3,15 @@ img {
     -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
     box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.4);
 }
+
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
+
+.wrapper {
+    max-width: -webkit-calc(1020px - (30px * 2));
+    max-width: calc(1020px - (30px * 2));
+}
+
