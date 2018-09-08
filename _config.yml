@@ -39,6 +39,8 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 permalink: /:title:output_ext
 
