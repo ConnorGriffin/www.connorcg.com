@@ -26,6 +26,8 @@ github_username:  ConnorGriffin
 linkedin_username: connor-griffin-b8b5b0103
 
 show_excerpts: true
+adverts:
+  posts: true
 
 disqus:
   shortname: connorcg
