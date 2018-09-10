@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Tracking Home Value in YNAB Using Zillow and Google Apps Script
-date: 2018-09-08 00:00:00 -700
-modified: 2018-09-08 00:00:00 -700
+date: 2018-09-10 02:00:00 -700
+modified: 2018-09-10 02:00:00 -700
 categories: YNAB
 tags:
 - Google Apps Script
