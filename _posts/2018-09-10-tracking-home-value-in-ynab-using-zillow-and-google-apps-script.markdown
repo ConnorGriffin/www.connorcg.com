@@ -11,6 +11,7 @@ tags:
 - API
 comments: true
 ---
+
 I've seen a few requests for YNAB ([You Need A Budget](https://ynab.com/referral/?ref=YK_lCy_BFqyQo6f0&utm_source=customer_referral)) to support some more advanced net worth tracking, such as tracking home value automatically. [Personal Capital](https://personalcapital.com) supports this out-of-the-box, but I thought it'd be fun to add it onto YNAB as well. 
 <!--more-->
 
