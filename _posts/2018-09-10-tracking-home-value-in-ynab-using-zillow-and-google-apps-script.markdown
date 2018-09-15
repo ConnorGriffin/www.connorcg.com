@@ -2,7 +2,7 @@
 layout: post
 title: Tracking Home Value in YNAB Using Zillow and Google Apps Script
 date: 2018-09-10 02:00:00 -700
-modified: 2018-09-10 02:00:00 -700
+modified: 2018-09-15 13:00:00 -700
 categories: YNAB
 tags:
 - Google Apps Script
@@ -23,7 +23,7 @@ Follow the [Getting Started](https://api.youneedabudget.com/#getting-started) in
 #### Get a Zillow Web Services ID (ZWSID)
 1. Create an account on [Zillow](https://www.zillow.com/user/Register.htm){:target="_blank"}, or sign into your existing account.
 2. Follow the [Get Started](https://www.zillow.com/howto/api/APIOverview.htm){:target="_blank"} instructions to sign up for API access.
-3. Choose only the **Home Valuations API** unless you plan to do anything else with your ZWSID that might require access to the other endpoints. 
+3. Choose only the **Property Details API** unless you plan to do anything else with your ZWSID that might require access to the other endpoints. 
 4. You should receive an email with your ZWSID shortly after filling out the form.
 
 ![API Signup](/assets/img/zillow-api-signup_2018-09-09_23-28.png){:height="759.75px" width="734.25"}  
