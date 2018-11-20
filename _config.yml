@@ -27,7 +27,7 @@ linkedin_username: connor-griffin-b8b5b0103
 
 show_excerpts: true
 adverts:
-  posts: true
+  posts: false
 
 disqus:
   shortname: connorcg
